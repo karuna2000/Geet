@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- anime.css cdn -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="../css/home.css" />
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>PlayMusic-PunjabiSong</title>
+  </head>
+  <body class="bg-trend">
+    <div class="parent_container position-relative">
+      <div class="player-indicator" id="player-indicator">
+        <div class="player-indicator-wrapper">
+          <span class="icon-wrapper">
+            <i class="fa-brands fa-napster"></i>
+          </span>
+        </div>
+      </div>
+      <div class="section_header">
+        <nav
+          class="nav-section position-fixed start-0 end-0 bg-top box-style"
+          id="nav-section"
+        >
+          <div class="d-flex w-100 py-2 justify-content-center logo-wrapper  ">
+            <div class="logo pt-2">
+              <h1 class="text-uppercase logo_title" id="playLogo">
+                <img
+                  src="https://img.icons8.com/external-dreamstale-green-shadow-dreamstale/64/000000/external-play-interaction-dreamstale-green-shadow-dreamstale.png"
+                  alt="playmusic"
+                  class="px-2"
+                />
+                <span>playmusic</span>
+              </h1>
+            </div>
+          </div>
+          <div class="mt-2 form-wrapper d-flex justify-content-end px-5 gap-4 position-relative  w-100">
+            <!-- <button class="btn bg-light text-black"  id="dform">search</button> -->
+           
+            <!-- <button class="btn bg-danger text-white">LogIn</button> -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Log In
+            </button>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+              sign Up
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- music section -->
+      <section class="Parent_music_section position-relative w-100 ">
+        <div class="parent-wrapper d-flex flex-row-reverse  justify-content-between">
+          <div class="inner_music_section_wrapper  wd-80" id="trend_section">
+            <div class="trending-song pb-4">
+              <div class="trend_title px-2">
+                <h2 class="trend-head text-center">Trending Songs</h2>
+              </div>
+            </div>
+
+            <div class="song-list px-3" id="btngroup">
+              <div
+                
+                id="trend_parent_row"
+                data-mode="global"
+              ></div>
+            </div>
+          </div>
+          <div class="filter_sidebar">
+            <div>
+                <div class="filter_title">
+                    <h1>Filter Songs</h1>
+                </div>
+                <div class="filter_body">
+                    <div class="filter_group" id="filter_parent">
+                        <div class="filter_language">
+                            <h1 class="">Languages</h1>
+                            <div class="form-check">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <input class="form-check-input" type="checkbox" value="Hindi" id="HindiDefault" data-type="language">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Hindi
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input" type="checkbox" value="English" id="EnglishDefault" data-type="language">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    English
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input" type="checkbox" value="Punjabi" id="PunjabiDefault" data-type="language">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Punjabi
+                                    </label>
+                                </li>
+                                <li class="list-group-item">
+                                    <input class="form-check-input" type="checkbox" value="Haryanvi" id="HaryanviDefault" data-type="language">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                    Haryanvi
+                                    </label>
+                                </li>
+                              </ul>
+                              </div>
+                          </div>
+                        <div class="filter_singer">
+                            <h1 class="">Singers</h1>
+                            <div class="form-check">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">
+                                        <input class="form-check-input" type="checkbox" value="Jubin Nautiyal" id="checkJubin" data-type="SingerName">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Jubin Nautiyal
+                                        </label>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input" type="checkbox" value="Shreya Ghosal" id="checkghosal"  data-type="SingerName">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Shreya Ghosal
+                                        </label>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input" type="checkbox" value="Yasser Desai" id="checkYasser"  data-type="SingerName">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Yasser Desai
+                                        </label>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input" type="checkbox" value="Guru Randhawa" id="checkGuru"  data-type="SingerName">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                        Guru Randhawa
+                                        </label>
+                                    </li>
+                                  </ul>
+                                  </div>
+                          </div>
+                        </div>
+                </div>
+            </div>  
+          </div>
+        </div>
+      </section>
+      <!-- music control -->
+      <div class="music-control" id="app">
+        <div class="music-control-wrapper">
+          <!-- start form -->
+          <!-- start end -->
+          <div class="music-inner-wrapper">
+            <div class="music-poster">
+              <img
+                src="../images/fashion.jpg"
+                loading="lazy"
+                alt=""
+                class="w-100"
+                id="SongPoster"
+              />
+            </div>
+            <div class="music-info">
+              <p class="song-title" id="SongTitle">song name</p>
+              <p class="singer-name" id="SingerName">singer name</p>
+            </div>
+          </div>
+          <div class="music-control-inner" id="DurationShow">
+            <div class="inner-wrapper">
+              <button class="" id="PrevSong">
+                <i class="fa-solid fa-caret-left"></i>
+              </button>
+              <button class="" id="PlaySong">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button class="" id="NextSong">
+                <i class="fa-solid fa-caret-right"></i>
+              </button>
+              <!-- <p class="music-duration"><span></span></p> -->
+            </div>
+          </div>
+          <div class="features py-3">
+            <div class="feature-wrapper d-flex justify-content-center">
+              <button class="vol-btn" id="Mute">
+                <i class="fa-solid fa-volume-xmark position-relative"></i>
+              </button>
+              <button class="vol-btn" id="Volume">
+                <i class="fa-solid fa-volume-high position-relative"></i>
+              </button>
+              <button class="vol-btn" id="Shuffle">
+                <i class="fa-solid fa-shuffle position-relative"></i>
+              </button>
+              <button class="vol-btn" id="Loop">
+                <i class="fa-solid fa-repeat position-relative"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- modal login-->
+    <div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-body">
+              <div class="d-flex h-100 w-100 justify-content-center position-relative">
+                <form method="post" class="bg-light w-50 h-100 p-2 rounded-start" id="signForm">
+                    <div class="h-100 w-100 d-flex justify-content-center align-items-center flex-column">
+                      <div>
+                        <h5 class="text-center p-1  text-black fw-bold">Log in</h5>
+                      </div>
+                      <div class="mt-2">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" name="username" id="username" placeholder="enter username" class="form-control" required>
+                      </div>
+                      <div class="mt-2">
+                        <label for="user-password" class="form-label">Password:</label>
+                        <input type="password" name="password" id="user-password" placeholder="enter password" class="form-control" required>
+                        <a href="" class=" d-block w-100 text-end c-link">forgot password?</a>
+                      </div>
+                      <div class="mt-3">
+                        <button type="submit" class="btn btn-submit">login</button>
+                      </div>
+                      <div class="mt-3">
+                        <span>new user?</span><a href="" class=" c-link">create account</a>
+                      </div>
+                    </div>
+                </form>
+                <div class="w-50 bg-00C897 position-relative rounded-end">
+                  <img src="../images/music.png" alt="music" class="w-100 h-100 position-relative">
+                  <div class="modal-header position-absolute top-0 end-0">
+                    <button type="button" class="btn-close close " data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+    <!-- modal end -->
+
+    <!-- modal sign up -->
+    <div class="modal fade " id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-body">
+              <div class="d-flex h-100 w-100 justify-content-center position-relative">
+                <form method="post" class="bg-light w-50 h-100 p-2 rounded-start" id="forms">
+                    <div class="h-100 w-100 d-flex justify-content-center align-items-center flex-column">
+                      <div>
+                        <h5 class="text-center p-1  text-black fw-bold">Sign up</h5>
+                      </div>
+                      <div class="mt-2">
+                        <label for="username" class="form-label">Username:</label>
+                        <input type="text" name="username" id="username1" placeholder="enter username" class="form-control" required>
+                      </div>
+                      <div class="mt-2">
+                        <label for="user-password" class="form-label">Password:</label>
+                        <input type="password" name="password" id="user-password1" placeholder="enter password" class="form-control" required>
+                        <a href="" class=" d-block w-100 text-end c-link">forgot password?</a>
+                      </div>
+                      <div class="mt-3">
+                        <button type="submit" class="btn btn-submit">Sign up</button>
+                      </div>
+                      <div class="mt-3">
+                        <span>Already have an account?</span><a href="" class=" c-link">Log in</a>
+                      </div>
+                    </div>
+                </form>
+                <div class="w-50 bg-00C897 position-relative rounded-end">
+                  <img src="../images/music.png" alt="music" class="w-100 h-100 position-relative">
+                  <div class="modal-header position-absolute top-0 end-0">
+                    <button type="button" class="btn-close close " data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+    <!-- modal sign up end -->
+
+
+    <!-- bootstrap js script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>  
+    <script src ="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script> 
+    <script src ="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script> 
+    <script src ="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script> 
+    <!-- custom Script file -->
+    <script defer src="../js/index.js"></script>
+  </body>
+</html>

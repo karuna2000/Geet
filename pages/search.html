@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- bootstrap cdn -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- anime.css cdn -->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/instantsearch.css@7/themes/algolia-min.css"
+  />
+    <!-- custom css -->
+
+    <link rel="stylesheet" type="text/css" href="../css/index.css" />
+    <!-- <link rel="stylesheet" href="../css/home.css"> -->
+    <!-- fontawesome cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title>Geet</title>
+    <link rel="shortcut icon" href="../images/geet.png">
+  </head>
+  <body>
+
+    <!-- container section -->
+    <div class="parent_container container-fluid">
+    <div class="player-indicator" id="player-indicator">
+      <div class="player-indicator-wrapper">
+        <span class="icon-wrapper">
+          <i class="fa-brands fa-napster"></i>
+        </span>
+      </div>
+    </div>
+    <!-- first section(Navbar) -->
+        <section class="navMenu">
+          <nav class="d-flex  w-100 justify-content-between align-items-center">
+            <div class="logo_Div_container">
+                 <img src="../images/geet.png" alt="geet" class="logo_image">
+            </div>
+            <div class="content_div_container ">
+              <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                 <i class="fa-solid fa-bars text-white"></i>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">SignIn</a></li>
+                <li><a class="dropdown-item" href="#">SignOut</a></li>
+                <li><a class="dropdown-item" href="#">SignUp</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+              </ul>
+            </div>
+          </nav>
+        </section>
+
+        <section class="audio-content_section" id="btngroup">
+          <div class=" position-relative">
+               <div class="input-group seachbox" id="searchbox">
+               </div>
+          </div>
+          <div class="audio_wrapper_searched">
+         <div class="audio_content_wrapper" id="hit">
+        </div>
+      </div>
+
+    <section class="position-relative" >
+      <div class="music-control mx-auto " id="app">
+        <div class="music-control-wrapper position-relative">
+          <div class="music-inner-wrapper">
+            <div class="music-poster mx-auto pt-2">
+              <img
+                src=""
+                loading="lazy"
+                alt=""
+                class="w-100"
+                id="SongPoster"
+              />
+            </div>
+            <div class="music-info ">
+              <h4 class="song-title" id="SongTitle"></h4>
+              <span class="singer-name" id="SingerName"></span>
+            </div>
+          </div>
+          <div class="music-control-inner position-relative" id="DurationShow">
+            <div class="inner-wrapper  d-flex justify-content-evenly">
+              <button class="btn btn-outline-primary" id="PrevSong">
+                <i class="fa-solid fa-caret-left"></i>
+              </button>
+              <button class="btn btn-outline-danger" id="PlaySong">
+                <i class="fa-solid fa-play"></i>
+              </button>
+              <button class="btn btn-outline-success" id="NextSong">
+                <i class="fa-solid fa-caret-right"></i>
+              </button>
+            </div>
+          </div>
+          <div class="features py-3">
+            <div class="feature-wrapper d-flex justify-content-evenly">
+              <button class="vol-btn btn btn-success" id="Mute">
+                <i class="fa-solid fa-volume-xmark position-relative"></i>
+              </button>
+              <button class="vol-btn btn btn-success" id="Volume">
+                <i class="fa-solid fa-volume-high position-relative"></i>
+              </button>
+              <button class="vol-btn btn btn-success" id="Shuffle">
+                <i class="fa-solid fa-shuffle position-relative"></i>
+              </button>
+              <button class="vol-btn btn btn-success" id="Loop">
+                <i class="fa-solid fa-repeat position-relative"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
+
+    <!-- bootstrap js script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src ="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src ="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src ="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@4.8.3/dist/instantsearch.production.min.js" ></script>
+
+    <!-- custom Script file -->
+    <script defer src="../js/search.js">
+
+
+  </body>
+</html>

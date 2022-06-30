@@ -1,0 +1,31 @@
+body {
+    font-family: sans-serif;
+    padding: 1em;
+  }
+  
+mark{
+    background-color:#ff6363 !important;
+}
+
+
+  input{
+      border:none;
+      outline: none;
+  }
+
+.ais-Hits-item{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#hit{
+  position: relative;
+  top: 13rem;
+}
+
+.ais-Hits--empty{
+  color: #ff6363;
+  background-color: #fff;
+  text-align: center;
+  font-size:24px;
+}
