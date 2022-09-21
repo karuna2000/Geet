@@ -1,3 +1,4 @@
+
 const searchClient= algoliasearch('VXYSM6PDQR', 'c7f2736599cc8de2d6a01901d5960fe5');
 const index = searchClient.initIndex('AllSongs');
 const hit = document.querySelector('#hit');
@@ -81,3 +82,5 @@ input.addEventListener('input',()=>{
         hit.classList.add('d-none');
     }
 });
+
+

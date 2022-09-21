@@ -39,7 +39,6 @@ let SongList;
 
 
 
-
 // playerIndicator function
 export const playIndicater = ()=>{
   if(!app.classList.contains('close')){
