@@ -53,8 +53,9 @@ export const playIndicater = ()=>{
 
 // handleMove function
 export const handlemove = (e)=>{
+  console.log(e);
+  app.style.top = `${e.y-200}px`;
   app.style.left = `${e.x-200}px`;
-  app.style.top = `${e.y-200}px `;
 }
 
 // // handledown function
