@@ -103,10 +103,10 @@ Mute.addEventListener('click',muteFunction);
 Loop.addEventListener('click',loopFunction);
 audio.addEventListener("timeupdate",timeUpdate);
 playerIndicator.addEventListener("click",playIndicater);
+
+// moving playIndicator (EventListeners)
 app.addEventListener("dblclick", handledown);
 app.addEventListener("click", handleleave);
-
-
 
 // when song is ended
 audio.addEventListener('ended',()=>{
