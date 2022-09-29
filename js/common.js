@@ -53,19 +53,23 @@ export const playIndicater = ()=>{
 
 // handleMove function
 export const handlemove = (e)=>{
-  console.log(e);
-  app.style.top = `${e.y-200}px`;
-  app.style.left = `${e.x-200}px`;
+  // app.style.top = `${e.y-200}px`;
+  // app.style.left = `${e.x-200}px`;
+  let shiftX = e.clientX - app.getBoundingClientRect().left;
+  let shiftY = e.clientY - app.getBoundingClientRect().top;
+  app.style.left = e.pageX - shiftX + 'px';
+  app.style.top = e.pageY - shiftY + 'px';
 }
 
 // // handledown function
 export const handledown = (e)=>{
-  document.addEventListener('mousemove',handlemove);
+  // document.body.append(app);
+  app.addEventListener('mousemove',handlemove);
 }
 
 // mouseout event handler
  export const handleleave = (e)=>{
-  document.removeEventListener('mousemove',handlemove);
+  app.removeEventListener('mousemove',handlemove);
 };
 
 
@@ -77,7 +81,6 @@ export const timeUpdate = (e)=>{
     DurationShow,
     [{width:`${widthVal}%`}]
     ,{duration:2000,easing:'linear',fill:'forwards'}
-
     );
 
   keyframe.pseudoElement="::before";
