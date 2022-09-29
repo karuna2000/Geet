@@ -105,8 +105,13 @@ audio.addEventListener("timeupdate",timeUpdate);
 playerIndicator.addEventListener("click",playIndicater);
 
 // moving playIndicator (EventListeners)
-app.addEventListener("dblclick", handledown);
-app.addEventListener("click", handleleave);
+app.addEventListener("mousedown", handledown);
+app.addEventListener("mouseup", handleleave);
+app.addEventListener("dragstart",()=>{
+  return false;
+})
+
+
 
 // when song is ended
 audio.addEventListener('ended',()=>{
