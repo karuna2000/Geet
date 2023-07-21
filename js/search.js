@@ -1,7 +1,7 @@
 
-const searchClient= algoliasearch('TU39AN3W6E', '1a1bfa67ea9761ea5be39f4788b706d7');
-// const index = searchClient.initIndex('AllSongs');
-const index = searchClient.initIndex('Songs');
+const searchClient= algoliasearch('Y2Q7OI99AN', '0eb218aae5ad1f70b314704f91b1e554');
+const index = searchClient.initIndex('AllSongs');
+// const index = searchClient.initIndex('Songs');
 const hit = document.querySelector('#hit');
 
 // intially display none for hit container
@@ -9,8 +9,8 @@ hit.classList.add('d-none');
 
 
 const search = instantsearch({
-    indexName: 'Songs',
-    // indexName: 'AllSongs',
+    // indexName: 'Songs',
+    indexName: 'AllSongs',
     searchClient,
 });
 
