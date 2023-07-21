@@ -1,6 +1,7 @@
 
 const searchClient= algoliasearch('TU39AN3W6E', '1a1bfa67ea9761ea5be39f4788b706d7');
-const index = searchClient.initIndex('AllSongs');
+// const index = searchClient.initIndex('AllSongs');
+const index = searchClient.initIndex('Songs');
 const hit = document.querySelector('#hit');
 
 // intially display none for hit container
