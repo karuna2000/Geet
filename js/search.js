@@ -1,5 +1,5 @@
 
-const searchClient= algoliasearch('VXYSM6PDQR', 'c7f2736599cc8de2d6a01901d5960fe5');
+const searchClient= algoliasearch('TU39AN3W6E', '1a1bfa67ea9761ea5be39f4788b706d7');
 const index = searchClient.initIndex('AllSongs');
 const hit = document.querySelector('#hit');
 
