@@ -9,7 +9,8 @@ hit.classList.add('d-none');
 
 
 const search = instantsearch({
-    indexName: 'AllSongs',
+    indexName: 'Songs',
+    // indexName: 'AllSongs',
     searchClient,
 });
 
