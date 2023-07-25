@@ -4,6 +4,17 @@ import {firebaseConfig,trendTemplates,TrendSet,
   btngroup,playAdd,Mute,Loop,muteFunction,loopFunction,timeUpdate,
   playerIndicator,playIndicater,app,audio,handledown,handlemove,handleleave} from './common.js';
 
+  window.addEventListener("load", () => {
+  
+    setTimeout(()=>{
+      const loader = document.querySelector(".main");
+      loader.style.display = "none";
+    },3000)
+   
+  });
+  
+
+
 const filterParent = document.getElementById('filterParent');
 let Initialize ;
 // Initialize Firebase
@@ -115,7 +126,7 @@ filterParent.addEventListener('click',(e)=>{
 
 });
 
-
+ 
 
 
 /*
