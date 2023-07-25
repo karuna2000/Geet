@@ -8,6 +8,16 @@ import {firebaseConfig,trendTemplates,TrendSet,
 firebase.initializeApp(firebaseConfig);
 
 
+window.addEventListener("load", () => {
+  
+  setTimeout(()=>{
+    const loader = document.querySelector(".main");
+    loader.style.display = "none";
+  },3000)
+ 
+});
+
+
 
 // write data into the realtime firebase database
 const database = firebase.database();
